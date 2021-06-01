@@ -104,7 +104,9 @@ final class UnitTests: XCTestCase {
         XCTAssertEqual(expectation.lines[0], "::add-mask::\(password)")
     }
 
-    func testSetEnvironmentVariable() {
+    func testSetEnvironmentVariable() throws {
+        try XCTSkipIf(ProcessInfo.processInfo.environment["GITHUB_ACTIONS"] == "true")
+
         let name = "SPLINE_RETICULATION_CONSTANT", value = "42"
         let expectation = MockTextOutputStream { logger in
             let handler = logger.handler as! GitHubActionsLogHandler
@@ -126,7 +128,9 @@ final class UnitTests: XCTestCase {
         XCTAssertEqual(expectation.lines[0], "::set-output name=\(name)::\(value)")
     }
 
-    func testAddSystemPath() {
+    func testAddSystemPath() throws {
+        try XCTSkipIf(ProcessInfo.processInfo.environment["GITHUB_ACTIONS"] == "true")
+
         let path = "/usr/local/bin"
         let expectation = MockTextOutputStream { logger in
             let handler = logger.handler as! GitHubActionsLogHandler

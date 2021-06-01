@@ -129,7 +129,15 @@ public struct GitHubActionsLogHandler: LogHandler {
      - Parameters:
      - name: The environment variable name
      - value: The environment variable value
+
+     - Important: The `set-env` command is deprecated.
+                  Please upgrade to using Environment Files
+                  or opt into unsecure command execution by setting the
+                  `ACTIONS_ALLOW_UNSECURE_COMMANDS` environment variable to `true`.
+                  For more information see:
+                  https://github.blog/changelog/2020-10-01-github-actions-deprecating-set-env-and-add-path-commands/.
      */
+    @available(swift, deprecated: 0.0.1, message: "Deprecated in 1.0.0")
     public func setEnvironmentVariable(name: String, value: String) {
         echo(command: "set-env", parameters: [("name", name)], value: value)
     }
@@ -165,7 +173,14 @@ public struct GitHubActionsLogHandler: LogHandler {
      - Parameters:
         - path: The directory path to prepend to the system `PATH` variable.
 
+     - Important: The `add-path` command is deprecated.
+                  Please upgrade to using Environment Files
+                  or opt into unsecure command execution by setting the
+                  `ACTIONS_ALLOW_UNSECURE_COMMANDS` environment variable to `true`.
+                  For more information see:
+                  https://github.blog/changelog/2020-10-01-github-actions-deprecating-set-env-and-add-path-commands/.
      */
+    @available(swift, deprecated: 0.0.1, message: "Deprecated in 1.0.0")
     public func addSystemPath(_ path: String) {
         echo(command: "add-path", value: path)
     }

@@ -28,12 +28,16 @@ final class SmokeTests: XCTestCase {
         logger.debug("\(maskedValue)")
     }
 
-    func testAddSystemPath() {
+    func testAddSystemPath() throws {
+        try XCTSkipIf(ProcessInfo.processInfo.environment["GITHUB_ACTIONS"] == "true")
+
         let path = "/path/to/dir"
         handler.addSystemPath(path)
     }
 
-    func testSetEnvironmentVariable() {
+    func testSetEnvironmentVariable() throws  {
+        try XCTSkipIf(ProcessInfo.processInfo.environment["GITHUB_ACTIONS"] == "true")
+
         let name = "MY_NAME", value = "Mona The Octocat"
         handler.setEnvironmentVariable(name: name, value: value)
     }
