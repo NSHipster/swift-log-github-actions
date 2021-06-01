@@ -41,12 +41,9 @@ logger.error("Something went wrong")
 // Prints "::error file=Sources/main.swift,line=5::Something went wrong
 ```
 
-<img width="636" alt="github-actions-ui" src="https://user-images.githubusercontent.com/7659/77580395-294a2c80-6e99-11ea-8c2f-187612b1e945.png">
+<img width="636" alt="GitHub Actions UI" src="https://user-images.githubusercontent.com/7659/77580395-294a2c80-6e99-11ea-8c2f-187612b1e945.png">
 
 ## Installation
-
-LoggingGitHubActions requires Xcode 11
-or a Swift 5.1 toolchain with the Swift Package Manager.
 
 ### Swift Package Manager
 
