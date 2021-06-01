@@ -68,7 +68,6 @@ public struct GitHubActionsLogHandler: LogHandler {
              To learn more about creating secrets and using them in a step, see
              ["Creating and using encrypted secrets."](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
 
-
      - Parameters:
         - level: The log level the message was logged at.
         - message: The message to log. To obtain a `String` representation call `message.description`.
@@ -101,7 +100,9 @@ public struct GitHubActionsLogHandler: LogHandler {
     // MARK: - Masking a value in log
 
     /**
-     Masking a value prevents a string or variable from being printed in the log. Each masked word separated by whitespace is replaced with the * character. You can use an environment variable or string for the mask's value.
+     Masking a value prevents a string or variable from being printed in the log.
+     Each masked word separated by whitespace is replaced with the `*` character.
+     You can use an environment variable or string for the mask's value.
 
             ::add-mask::{value}
     */
@@ -135,7 +136,8 @@ public struct GitHubActionsLogHandler: LogHandler {
     /**
      Sets an action's output parameter.
 
-     Optionally, you can also declare output parameters in an action's metadata file. For more information, see "Metadata syntax for GitHub Actions."
+     Optionally, you can also declare output parameters in an action's metadata file.
+     For more information, see ["Metadata syntax for GitHub Actions."](https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions)
 
             ::set-output name={name}::{value}
 
