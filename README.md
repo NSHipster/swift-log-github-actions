@@ -50,7 +50,7 @@ logger.error("Something went wrong")
 Add `swift-log-github-actions` as a dependency to your `Package.swift` file.
 
 ```swift
-.package(url: "https://github.com/NSHipster/swift-log-github-actions.git", from: "0.0.1")
+.package(url: "https://github.com/NSHipster/swift-log-github-actions.git", from: "1.0.0")
 ```
 
 Add `"LoggingGitHubActions` to your target's dependencies.
