@@ -4,7 +4,14 @@ on: [push]
 
 jobs:
   macos:
-    runs-on: macOS-latest
+    runs-on: macos-latest
+
+    strategy:
+      matrix:
+        xcode:
+          - "12.4" # Swift 5.3
+
+    name: "macOS (Xcode ${{ matrix.xcode }})"
 
     steps:
       - name: Checkout
@@ -17,7 +24,10 @@ jobs:
 
     strategy:
       matrix:
-        swift: ["5.1"]
+        swift:
+          - "5.3"
+
+    name: "Linux (Swift ${{ matrix.swift }})"
 
     container:
       image: swift:${{ matrix.swift }}
