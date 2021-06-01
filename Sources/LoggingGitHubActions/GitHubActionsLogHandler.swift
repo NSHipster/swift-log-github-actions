@@ -203,3 +203,11 @@ public struct GitHubActionsLogHandler: LogHandler {
         outputStream.write(output)
     }
 }
+
+// MARK: -
+
+fileprivate struct StandardTextOutputStream: TextOutputStream {
+    mutating func write(_ string: String) {
+        print(string)
+    }
+}
