@@ -7,6 +7,9 @@ import struct Foundation.UUID
  See ["Workflow commands for GitHub Actions."](https://help.github.com/en/actions/reference/workflow-commands-for-github-actions)
  */
 public struct GitHubActionsLogHandler: LogHandler {
+    /**
+     The text output stream written to by the log handler.
+    */
     private var outputStream: TextOutputStream
 
     /**
